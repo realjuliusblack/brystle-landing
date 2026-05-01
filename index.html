@@ -433,6 +433,206 @@ h2 {
 }
 
 /* -----------------------------------------
+   INTERACTION / CHANNELS SECTION
+----------------------------------------- */
+#interaction {
+  position: relative;
+}
+
+.interaction-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.channel-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.channel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 180px;
+  min-width: 160px;
+  max-width: 220px;
+  text-align: center;
+  transition: border-color 0.22s ease, transform 0.18s ease;
+}
+
+.channel-card:hover {
+  border-color: var(--mint-border);
+  transform: translateY(-3px);
+}
+
+.channel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--mint-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.channel-label {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--t1);
+}
+
+.channel-micro {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--t3);
+}
+
+/* Converging connector lines from channels down to operator mark */
+.convergence-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 0;
+}
+
+.convergence-area svg {
+  width: 100%;
+  max-width: 720px;
+  overflow: visible;
+}
+
+/* Operator mark (mint pill) */
+.operator-mark-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 4px;
+}
+
+.operator-mark {
+  background: var(--mint);
+  color: var(--charcoal);
+  border-radius: 40px;
+  padding: 18px 44px;
+  text-align: center;
+}
+
+.operator-mark-label {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.operator-mark-sub {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.operator-caption {
+  font-size: 14px;
+  color: var(--t3);
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* Chat bubble pair */
+.chat-example {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.chat-bubble {
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 88%;
+}
+
+.chat-bubble.you {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--t2);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.you::before {
+  content: 'You';
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 5px;
+}
+
+.chat-bubble.operator {
+  background: var(--mint-dim);
+  border: 1px solid var(--mint-border);
+  color: var(--t1);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.operator::before {
+  content: 'Brystle';
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 5px;
+}
+
+@media (max-width: 640px) {
+  .channel-card {
+    flex: 1 1 140px;
+    min-width: 130px;
+    padding: 24px 18px 20px;
+  }
+
+  .operator-mark {
+    padding: 16px 32px;
+  }
+
+  .operator-mark-label {
+    font-size: 17px;
+  }
+}
+
+/* -----------------------------------------
    ORG CHART / STACK DIAGRAM
 ----------------------------------------- */
 #stack {
@@ -1153,6 +1353,97 @@ footer {
       </li>
 
     </ul>
+  </div>
+</section>
+
+<!-- INTERACTION / CHANNELS -->
+<section id="interaction" class="section">
+  <div class="container">
+    <p class="section-label">How you reach it</p>
+    <h2>Just talk to your operator.</h2>
+    <p class="section-intro">
+      Text, email, or the app. We meet you where you are. The business forms around your habits.
+    </p>
+
+    <div class="interaction-layout">
+
+      <!-- Three channel cards -->
+      <div class="channel-row" role="list">
+
+        <div class="channel-card" role="listitem">
+          <div class="channel-icon" aria-hidden="true">
+            <!-- SMS bubble icon -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2H4C2.9 2 2 2.9 2 4V16C2 17.1 2.9 18 4 18H8L12 22L16 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="#2EE5A8"/>
+              <rect x="7" y="8" width="10" height="1.8" rx="0.9" fill="#0F1A1F"/>
+              <rect x="7" y="11.5" width="7" height="1.8" rx="0.9" fill="#0F1A1F" opacity="0.55"/>
+            </svg>
+          </div>
+          <div class="channel-label">Text</div>
+          <div class="channel-micro">Fire off a message. Done.</div>
+        </div>
+
+        <div class="channel-card" role="listitem">
+          <div class="channel-icon" aria-hidden="true">
+            <!-- Envelope icon -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="20" height="16" rx="2.5" fill="#2EE5A8"/>
+              <path d="M2 7L12 13L22 7" stroke="#0F1A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="channel-label">Email</div>
+          <div class="channel-micro">Forward, reply, dictate. Same flow.</div>
+        </div>
+
+        <div class="channel-card" role="listitem">
+          <div class="channel-icon" aria-hidden="true">
+            <!-- Phone/app icon -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="1" width="14" height="22" rx="3" fill="#2EE5A8"/>
+              <rect x="8" y="4" width="8" height="1.5" rx="0.75" fill="#0F1A1F" opacity="0.5"/>
+              <rect x="9.5" y="19.5" width="5" height="1.5" rx="0.75" fill="#0F1A1F" opacity="0.4"/>
+              <rect x="8" y="7" width="8" height="9" rx="1.5" fill="#0F1A1F" opacity="0.18"/>
+            </svg>
+          </div>
+          <div class="channel-label">App</div>
+          <div class="channel-micro">Tap when you want a screen.</div>
+        </div>
+
+      </div>
+      <!-- /channel-row -->
+
+      <!-- Converging connector lines -->
+      <div class="convergence-area" aria-hidden="true">
+        <svg viewBox="0 0 720 52" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;height:52px;">
+          <!-- Left channel (Text) drop from ~180 -->
+          <line x1="180" y1="0" x2="360" y2="52" stroke="#2EE5A8" stroke-width="1.5" stroke-opacity="0.5"/>
+          <!-- Center channel (Email) drop from ~360 -->
+          <line x1="360" y1="0" x2="360" y2="52" stroke="#2EE5A8" stroke-width="1.5" stroke-opacity="0.5"/>
+          <!-- Right channel (App) drop from ~540 -->
+          <line x1="540" y1="0" x2="360" y2="52" stroke="#2EE5A8" stroke-width="1.5" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+
+      <!-- Operator mark -->
+      <div class="operator-mark-wrap">
+        <div class="operator-mark">
+          <div class="operator-mark-label">Your Brystle Operator</div>
+          <div class="operator-mark-sub">Routes every request</div>
+        </div>
+        <p class="operator-caption">
+          Your operator routes the work. Managers and agents do it. You stay in the relationships.
+        </p>
+      </div>
+
+      <!-- Example chat exchange -->
+      <div class="chat-example" aria-label="Example operator exchange">
+        <div class="chat-bubble you">Practice in Tucson needs a hygienist tomorrow at 8am.</div>
+        <div class="chat-bubble operator">On it. Three available, dispatching now. I'll confirm in 20.</div>
+      </div>
+
+    </div>
+    <!-- /interaction-layout -->
+
   </div>
 </section>
 
