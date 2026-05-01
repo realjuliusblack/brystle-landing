@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brystle — Dental Staffing. Built for Agencies.</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Brystle — Your dental staffing agency on autopilot.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    TOKENS
-───────────────────────────────────────── */
+----------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -43,9 +43,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    LAYOUT UTILITIES
-───────────────────────────────────────── */
+----------------------------------------- */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -56,9 +56,9 @@ body {
   padding: 100px 0;
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    BACKGROUND TEXTURE
-───────────────────────────────────────── */
+----------------------------------------- */
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -81,9 +81,9 @@ body {
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    NAV
-───────────────────────────────────────── */
+----------------------------------------- */
 nav {
   position: sticky;
   top: 0;
@@ -104,7 +104,6 @@ nav {
   padding: 0 28px;
 }
 
-/* Wordmark */
 .wordmark {
   display: flex;
   align-items: center;
@@ -147,9 +146,9 @@ nav {
 
 .nav-links a:hover { color: var(--mint); }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    HERO
-───────────────────────────────────────── */
+----------------------------------------- */
 #hero {
   position: relative;
   min-height: calc(100vh - 64px);
@@ -285,9 +284,9 @@ h1 .accent { color: var(--mint); }
   transform: translateY(-1px);
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    SECTION HEADERS
-───────────────────────────────────────── */
+----------------------------------------- */
 .section-label {
   font-size: 11px;
   font-weight: 600;
@@ -314,9 +313,9 @@ h2 {
   margin-bottom: 56px;
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    PROBLEM SECTION
-───────────────────────────────────────── */
+----------------------------------------- */
 #problem {
   background: var(--surface);
   position: relative;
@@ -371,94 +370,71 @@ h2 {
   color: var(--t3);
 }
 
-/* ─────────────────────────────────────────
-   CAPABILITIES SECTION
-───────────────────────────────────────── */
+/* -----------------------------------------
+   AUTOPILOT LIST SECTION
+----------------------------------------- */
 #product {
   position: relative;
 }
 
-.capability-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.autopilot-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 0;
 }
 
-.capability-card {
+.autopilot-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 36px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.25s ease, transform 0.2s ease;
+  padding: 28px 32px;
+  transition: border-color 0.22s ease, transform 0.18s ease;
 }
 
-.capability-card:hover {
+.autopilot-item:hover {
   border-color: var(--mint-border);
-  transform: translateY(-3px);
+  transform: translateX(4px);
 }
 
-.capability-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--mint-glow), transparent);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.capability-card:hover::after { opacity: 1; }
-
-.capability-icon {
-  width: 44px;
-  height: 44px;
+.autopilot-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background: var(--mint-dim);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 2px;
 }
 
-.capability-icon svg {
-  width: 22px;
-  height: 22px;
+.autopilot-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
-.capability-card h3 {
-  font-size: 19px;
+.autopilot-text h3 {
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   color: var(--t1);
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
-.capability-card p {
-  font-size: 15px;
-  line-height: 1.65;
+.autopilot-text p {
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--t3);
 }
 
-.capability-tag {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--mint);
-  background: var(--mint-dim);
-  border-radius: 4px;
-  padding: 4px 10px;
-}
-
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    WHO IT'S FOR
-───────────────────────────────────────── */
+----------------------------------------- */
 #who {
   background: var(--surface);
 }
@@ -558,9 +534,9 @@ h2 {
   height: 18px;
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    PRICING
-───────────────────────────────────────── */
+----------------------------------------- */
 #pricing {
   position: relative;
 }
@@ -651,9 +627,9 @@ h2 {
 
 .pricing-stat-value span { color: var(--mint); }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    FOOTER
-───────────────────────────────────────── */
+----------------------------------------- */
 footer {
   border-top: 1px solid var(--border);
   padding: 48px 0;
@@ -699,15 +675,11 @@ footer {
   color: var(--t3);
 }
 
-/* ─────────────────────────────────────────
+/* -----------------------------------------
    RESPONSIVE
-───────────────────────────────────────── */
+----------------------------------------- */
 @media (max-width: 860px) {
   .problem-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .capability-grid {
     grid-template-columns: 1fr;
   }
 
@@ -752,6 +724,12 @@ footer {
 
   .nav-links { gap: 16px; }
   .nav-links li:nth-child(2) { display: none; }
+
+  .autopilot-item {
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 20px;
+  }
 }
 </style>
 </head>
@@ -759,33 +737,28 @@ footer {
 
 <div class="bg-grid" aria-hidden="true"></div>
 
-<!-- ─── NAV ─── -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#hero" class="wordmark" aria-label="Brystle home">
-      <!-- Brystle mark: stylized B with bristle-curve -->
       <svg class="wordmark-glyph" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="#2EE5A8"/>
-        <!-- Stem -->
         <rect x="9" y="7" width="3.5" height="18" rx="1.5" fill="#0F1A1F"/>
-        <!-- Top bowl -->
         <path d="M12.5 7H18.5C20.7 7 22.5 8.8 22.5 11C22.5 13.2 20.7 15 18.5 15H12.5V7Z" fill="#0F1A1F"/>
-        <!-- Bottom bowl (wider) -->
         <path d="M12.5 15H19C21.5 15 23.5 17 23.5 19.5C23.5 22 21.5 24 19 24H12.5V15Z" fill="#0F1A1F"/>
-        <!-- Bristle arc accent -->
         <path d="M22 8.5C24.5 9.5 26 11 26 13" stroke="#0F1A1F" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
       </svg>
       <span class="wordmark-text">Brys<span>tle</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#product">Product</a></li>
+      <li><a href="#product">Autopilot</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#footer-contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section id="hero">
   <div class="bg-glow-hero" aria-hidden="true"></div>
   <div class="container">
@@ -796,14 +769,12 @@ footer {
       </div>
 
       <h1>
-        Fill shifts in hours.<br>
-        Keep the <span class="accent">relationships</span><br>
-        marketplaces can't.
+        Your dental staffing agency.<br>
+        On <span class="accent">autopilot.</span>
       </h1>
 
       <p class="hero-sub">
-        Brystle is the staffing operating system built for boutique dental agencies.
-        Same-day SMS dispatch, full credentialing, and a practice portal -- without ceding your book of business to a marketplace.
+        AI handles dispatch, credentialing, billing, and payouts so you can focus on relationships, not back-office. Brystle runs the agency. You run the relationships.
       </p>
 
       <div class="hero-cta-group">
@@ -823,38 +794,38 @@ footer {
   </div>
 </section>
 
-<!-- ─── PROBLEM ─── -->
+<!-- PROBLEM -->
 <section id="problem" class="section">
   <div class="container">
-    <p class="section-label">The market problem</p>
-    <h2>Marketplaces took speed.<br>They took margin too.</h2>
+    <p class="section-label">The real problem</p>
+    <h2>Boutique agencies are getting squeezed from both sides.</h2>
     <p class="section-intro">
-      TempMee, GoTu, and Cloud Dentistry solved the volume problem for large agencies. For boutique shops, they introduced three new ones.
+      Marketplaces solved speed for large shops. For boutique agencies they created a new trap: you cannot compete on response time AND you cannot afford the back-office to scale. Autopilot is the answer.
     </p>
 
     <div class="problem-grid" role="list">
 
       <div class="problem-card" role="listitem">
         <div class="problem-number" aria-hidden="true">01</div>
-        <h3>They clip 10 to 25 percent of every shift</h3>
+        <h3>You cannot match marketplace speed on your own</h3>
         <p>
-          Every placement you make through a marketplace is a commission you're paying for a shift your relationship closed. That cut compounds across your whole book. At scale it is not a fee -- it is a partner you never agreed to.
+          Practices want same-day fills by 7 AM. A marketplace texts 200 hygienists in seconds. You are still scrolling contacts. The relationship advantage evaporates when the chair is already filled before you call.
         </p>
       </div>
 
       <div class="problem-card" role="listitem">
         <div class="problem-number" aria-hidden="true">02</div>
-        <h3>They own the hygienist, not you</h3>
+        <h3>Back-office eats your margin before you scale</h3>
         <p>
-          When a hygienist signs into a marketplace app, your relationship becomes a data point in their roster. Their loyalty is to the platform that texts them first. Your decade of trust becomes a commodity.
+          Credentialing, invoicing, payroll, and reporting each need someone watching them. Hiring that ops team costs more than the placements justify. You are stuck in a size where hustle does not scale.
         </p>
       </div>
 
       <div class="problem-card" role="listitem">
         <div class="problem-number" aria-hidden="true">03</div>
-        <h3>Speed still beats you even when you're better</h3>
+        <h3>Marketplaces clip your margin AND take your hygienists</h3>
         <p>
-          Practices want same-day. They do not care how good your relationships are if the marketplace fills the chair at 7 AM before you finish your morning coffee. Boutique agencies are losing on response time alone.
+          Every platform placement pays them 10 to 25 percent of your gross billing. Then the marketplace texts your hygienist for the next shift, building loyalty to the app instead of to you. You lose twice.
         </p>
       </div>
 
@@ -862,85 +833,101 @@ footer {
   </div>
 </section>
 
-<!-- ─── PRODUCT ─── -->
+<!-- AUTOPILOT / PRODUCT -->
 <section id="product" class="section">
   <div class="container">
-    <p class="section-label">What Brystle does</p>
-    <h2>Your ops stack.<br>Nothing you don't need.</h2>
+    <p class="section-label">Full automation</p>
+    <h2>What runs on autopilot.</h2>
     <p class="section-intro">
-      Four capabilities that cover the full agency workflow, from shift request to verified placement.
+      Every piece of agency back-office that used to require a hire or a workaround. Brystle runs it end to end so you do not have to.
     </p>
 
-    <div class="capability-grid">
+    <ul class="autopilot-list" role="list">
 
-      <div class="capability-card">
-        <div class="capability-icon" aria-hidden="true">
-          <!-- SMS / Lightning icon -->
-          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 2L4 13H11L9 20L18 9H11L13 2Z" fill="#2EE5A8"/>
+      <li class="autopilot-item" role="listitem">
+        <div class="autopilot-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 2L3 11H9L8 18L17 9H11L11 2Z" fill="#2EE5A8"/>
           </svg>
         </div>
-        <h3>Same-day SMS dispatch</h3>
-        <p>
-          Open a shift. Brystle sends an SMS blast to your qualified roster ranked by fit, distance, and history. Hygienists reply to claim. You confirm. The practice gets a fill notification. No app required for hygienists.
-        </p>
-        <span class="capability-tag">Core feature</span>
-      </div>
+        <div class="autopilot-text">
+          <h3>Same-day shift dispatch</h3>
+          <p>SMS blast to your ranked roster. Hygienist replies to claim. Practice gets a fill confirmation. No app install, no manual calls.</p>
+        </div>
+      </li>
 
-      <div class="capability-card">
-        <div class="capability-icon" aria-hidden="true">
-          <!-- Shield / credential icon -->
-          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 2L3 6V12C3 16.4 6.4 20.5 11 21C15.6 20.5 19 16.4 19 12V6L11 2Z" fill="#2EE5A8"/>
-            <path d="M7.5 11L10 13.5L14.5 9" stroke="#0F1A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <li class="autopilot-item" role="listitem">
+        <div class="autopilot-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L3 6V11C3 15 6.4 18.5 10 19C13.6 18.5 17 15 17 11V6L10 2Z" fill="#2EE5A8"/>
+            <path d="M7 10.5L9 12.5L13 8.5" stroke="#0F1A1F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>Full hygienist credentialing</h3>
-        <p>
-          License verification, immunization records, CPR cert, malpractice COI, OIG sanctions check, and OSHA bloodborne pathogen training -- tracked and auto-flagged before expiry. Every hygienist on your roster stays current.
-        </p>
-        <span class="capability-tag">Compliance</span>
-      </div>
+        <div class="autopilot-text">
+          <h3>Credentialing renewals</h3>
+          <p>License, immunization, CPR, malpractice COI, OIG sanctions, and OSHA BBP. Auto-tracked, auto-flagged before expiry. Every hygienist on your roster stays compliant.</p>
+        </div>
+      </li>
 
-      <div class="capability-card">
-        <div class="capability-icon" aria-hidden="true">
-          <!-- Multi-tenant / layers icon -->
-          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="14" width="16" height="5" rx="2" fill="#2EE5A8"/>
-            <rect x="3" y="8.5" width="16" height="5" rx="2" fill="#2EE5A8" opacity="0.6"/>
-            <rect x="3" y="3" width="16" height="5" rx="2" fill="#2EE5A8" opacity="0.3"/>
+      <li class="autopilot-item" role="listitem">
+        <div class="autopilot-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="16" height="12" rx="2" fill="#2EE5A8" opacity="0.9"/>
+            <rect x="5" y="8" width="6" height="1.5" rx="0.75" fill="#0F1A1F"/>
+            <rect x="5" y="11" width="4" height="1.5" rx="0.75" fill="#0F1A1F" opacity="0.5"/>
           </svg>
         </div>
-        <h3>Multi-agency from day one</h3>
-        <p>
-          Each agency you run keeps its own brand, roster, and practice relationships. A holding company or staffing group can operate multiple brands on a single Brystle account. No bleed between books.
-        </p>
-        <span class="capability-tag">Multi-tenant</span>
-      </div>
+        <div class="autopilot-text">
+          <h3>Practice intake and onboarding</h3>
+          <p>New practice submits through your branded portal. Brystle captures their requirements, preferred roster, and billing info. Ready to fill on day one.</p>
+        </div>
+      </li>
 
-      <div class="capability-card">
-        <div class="capability-icon" aria-hidden="true">
-          <!-- Portal / device icon -->
-          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="4" width="13" height="10" rx="2" fill="#2EE5A8" opacity="0.9"/>
-            <rect x="2" y="16" width="13" height="2" rx="1" fill="#2EE5A8" opacity="0.4"/>
-            <rect x="6" y="19" width="5" height="1.5" rx="0.75" fill="#2EE5A8" opacity="0.4"/>
-            <rect x="17" y="8" width="3" height="8" rx="1.5" fill="#2EE5A8" opacity="0.7"/>
-            <rect x="17.75" y="6" width="1.5" height="2" rx="0.5" fill="#2EE5A8" opacity="0.5"/>
+      <li class="autopilot-item" role="listitem">
+        <div class="autopilot-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="3" width="16" height="14" rx="2" fill="#2EE5A8" opacity="0.85"/>
+            <path d="M6 10L8.5 12.5L14 7" stroke="#0F1A1F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>Practice portal plus hygienist PWA</h3>
-        <p>
-          Practices submit shift requests through a branded portal tied to your agency. Hygienists get a lightweight progressive web app for schedule, upcoming shifts, and credential status. Your logo. Your relationship.
-        </p>
-        <span class="capability-tag">Portals</span>
-      </div>
+        <div class="autopilot-text">
+          <h3>Invoicing</h3>
+          <p>Auto-generated on shift close, auto-sent to the practice, auto-tracked for payment. AR aging surfaces in your dashboard without a billing coordinator.</p>
+        </div>
+      </li>
 
-    </div>
+      <li class="autopilot-item" role="listitem">
+        <div class="autopilot-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="8" fill="#2EE5A8" opacity="0.9"/>
+            <path d="M10 6V10.5L13 12.5" stroke="#0F1A1F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="autopilot-text">
+          <h3>Hygienist payouts</h3>
+          <p>W-2 payroll triggers and 1099 ACH disbursements routed automatically on shift confirmation. Your hygienists get paid fast. You get the paper trail.</p>
+        </div>
+      </li>
+
+      <li class="autopilot-item" role="listitem">
+        <div class="autopilot-icon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="14" width="16" height="4" rx="1.5" fill="#2EE5A8"/>
+            <rect x="2" y="9" width="16" height="4" rx="1.5" fill="#2EE5A8" opacity="0.6"/>
+            <rect x="2" y="4" width="16" height="4" rx="1.5" fill="#2EE5A8" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="autopilot-text">
+          <h3>Reconciliation and reporting</h3>
+          <p>Revenue, payroll, and AR aging in a single dashboard. No spreadsheet reconciliation at month end. Know your numbers in real time.</p>
+        </div>
+      </li>
+
+    </ul>
   </div>
 </section>
 
-<!-- ─── WHO ─── -->
+<!-- WHO -->
 <section id="who" class="section">
   <div class="container">
     <div class="who-inner">
@@ -948,17 +935,17 @@ footer {
       <div class="who-visual" aria-hidden="true">
         <div class="who-card-stack">
           <div class="who-card">
-            <div class="who-card-label">Active agency</div>
+            <div class="who-card-label">Running on autopilot</div>
             <div class="who-card-agency">Sunrise Dental Staffing</div>
             <div class="who-card-detail">12 active hygienists. 4 open shifts today. 3 filled in the last 90 minutes.</div>
           </div>
           <div class="who-card">
-            <div class="who-card-label">Active agency</div>
+            <div class="who-card-label">Running on autopilot</div>
             <div class="who-card-agency">Pacific Hygiene Group</div>
             <div class="who-card-detail">28 active hygienists. 7 open shifts today.</div>
           </div>
           <div class="who-card">
-            <div class="who-card-label">Active agency</div>
+            <div class="who-card-label">Running on autopilot</div>
             <div class="who-card-agency">Metro Dental Temps</div>
             <div class="who-card-detail">9 active hygienists.</div>
           </div>
@@ -967,9 +954,9 @@ footer {
 
       <div class="who-content">
         <p class="section-label">Who it's for</p>
-        <h2>Built for the agency founder, not the marketplace.</h2>
+        <h2>1 to 50 person agencies that want their relationships back.</h2>
         <p style="font-size:15px;line-height:1.65;color:var(--t2);margin-bottom:8px;">
-          If you run a 1 to 50 person dental staffing shop and your ops stack is a personal cell, a spreadsheet, and sheer hustle -- Brystle is for you.
+          You built this on personal trust. Brystle gives you the speed and the back-office to stop losing to platforms that have neither.
         </p>
         <ul class="who-list" role="list">
           <li role="listitem">
@@ -977,21 +964,21 @@ footer {
               <circle cx="9" cy="9" r="9" fill="#2EE5A8" fill-opacity="0.15"/>
               <path d="M5.5 9L7.8 11.3L12.5 6.5" stroke="#2EE5A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            You have relationships marketplaces cannot replicate. You need speed to match.
+            You have relationships no marketplace can replicate. You need the speed and automation to match their response time.
           </li>
           <li role="listitem">
             <svg class="who-check" viewBox="0 0 18 18" fill="none" aria-hidden="true">
               <circle cx="9" cy="9" r="9" fill="#2EE5A8" fill-opacity="0.15"/>
               <path d="M5.5 9L7.8 11.3L12.5 6.5" stroke="#2EE5A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            You want credentialing handled without a dedicated coordinator on payroll.
+            You want credentialing, invoicing, and payroll handled without hiring an ops team.
           </li>
           <li role="listitem">
             <svg class="who-check" viewBox="0 0 18 18" fill="none" aria-hidden="true">
               <circle cx="9" cy="9" r="9" fill="#2EE5A8" fill-opacity="0.15"/>
               <path d="M5.5 9L7.8 11.3L12.5 6.5" stroke="#2EE5A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            You plan to grow -- maybe multiple brands -- and need ops that scale without rebuilding.
+            You plan to grow -- maybe multiple brands -- and need ops that scale without rebuilding every time.
           </li>
           <li role="listitem">
             <svg class="who-check" viewBox="0 0 18 18" fill="none" aria-hidden="true">
@@ -1007,26 +994,25 @@ footer {
   </div>
 </section>
 
-<!-- ─── PRICING ─── -->
+<!-- PRICING -->
 <section id="pricing" class="section">
   <div class="container">
     <p class="section-label">Pricing</p>
     <div class="pricing-card">
       <div class="pricing-left">
-        <h2>We run the platform.<br>You keep the book.</h2>
+        <h2>Brystle runs the platform.<br>You run the relationships.</h2>
         <p class="pricing-model">
-          Brystle is a managed retainer. No per-placement fees. No revenue share. A fixed monthly cost covers the platform, credentialing workflows, and ongoing support. Your margin stays with you.
+          Managed retainer. No per-shift fees. No revenue share. A fixed monthly cost covers the full autopilot stack: dispatch, credentialing, billing, payouts, and reporting. Your margin stays with you.
         </p>
         <p class="pricing-anchor">
-          Starts in the <strong>low thousands per month.</strong> That's the all-in cost.
-          Compare it to 10 to 25 percent of gross billings on every marketplace placement you make today.
+          Compare a fixed monthly retainer to <strong>10 to 25 percent of gross billings</strong> on every marketplace placement you make today. The math is not close.
         </p>
       </div>
 
       <div class="pricing-right">
         <div class="pricing-stat">
           <div class="pricing-stat-label">Marketplace cut per shift</div>
-          <div class="pricing-stat-value"><span>10 -- 25%</span> of gross</div>
+          <div class="pricing-stat-value"><span>10 to 25%</span> of gross</div>
         </div>
         <div class="pricing-stat">
           <div class="pricing-stat-label">Brystle model</div>
@@ -1041,7 +1027,7 @@ footer {
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer id="footer-contact">
   <div class="container">
     <div class="footer-inner">
