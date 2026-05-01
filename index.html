@@ -1142,6 +1142,7 @@ footer {
 
   .waitlist-form input[type="email"] {
     width: 100%;
+    font-size: 16px; /* prevent iOS zoom */
     border-bottom: 1px solid var(--border);
   }
 
@@ -1149,6 +1150,7 @@ footer {
     border-radius: 0;
     text-align: center;
     padding: 16px;
+    min-height: 44px;
   }
 
   .nav-links { gap: 16px; }
@@ -1158,6 +1160,160 @@ footer {
     flex-direction: column;
     gap: 14px;
     padding: 24px 20px;
+  }
+}
+
+/* -----------------------------------------
+   MOBILE: 414px and below
+----------------------------------------- */
+@media (max-width: 414px) {
+  /* Global layout */
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  /* Hero */
+  #hero {
+    padding: 60px 0 72px;
+  }
+
+  /* Nav: hide all links at 414px, keep wordmark only */
+  .nav-links li:nth-child(1),
+  .nav-links li:nth-child(3) {
+    display: none;
+  }
+
+  /* Problem cards: tighter padding */
+  .problem-card {
+    padding: 28px 24px;
+  }
+
+  /* Section 4: channel cards go full-width single column */
+  .channel-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .channel-card {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+    padding: 20px 20px;
+  }
+
+  /* Hide convergence SVG lines when cards stack */
+  .convergence-area {
+    display: none;
+  }
+
+  /* Operator mark: tighten to prevent overflow */
+  .operator-mark {
+    padding: 14px 24px;
+  }
+
+  .operator-mark-label {
+    font-size: 16px;
+  }
+
+  /* Section 5: tier2 columns go 2-wide then wrap */
+  .tier2-col {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+    max-width: calc(50% - 6px);
+  }
+
+  /* Hide fan SVG connector -- visual proximity carries structure */
+  .stack-fan {
+    display: none;
+  }
+
+  /* Tier 0 box tighten */
+  .tier0-box {
+    padding: 18px 24px;
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Tier 1 box tighten */
+  .tier1-box {
+    padding: 16px 20px;
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Section 6: who-card-stack clamp offsets to prevent overflow */
+  .who-card-stack {
+    overflow: hidden;
+  }
+
+  .who-card:nth-child(2) {
+    left: 10px;
+  }
+
+  .who-card:nth-child(3) {
+    left: 20px;
+  }
+
+  /* Pricing card */
+  .pricing-card {
+    padding: 32px 20px;
+  }
+
+  /* Ghost button full width on mobile */
+  .btn-ghost {
+    min-height: 44px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .waitlist-form {
+    width: 100%;
+  }
+}
+
+/* -----------------------------------------
+   MOBILE: 320px
+----------------------------------------- */
+@media (max-width: 320px) {
+  /* Extra chip tightening at 320px */
+  .tier2-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .tier3-chip {
+    font-size: 10px;
+    padding: 3px 8px;
+    white-space: normal;
+  }
+
+  /* Operator mark at 320px */
+  .operator-mark {
+    padding: 12px 16px;
+  }
+
+  .operator-mark-label {
+    font-size: 14px;
+  }
+
+  /* Tighter hero headline floor */
+  h1 {
+    font-size: 34px;
   }
 }
 </style>
